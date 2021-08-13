@@ -87,41 +87,7 @@
 								</li>
 							</ul>
 							{% endfor %}
-							<nav id="comments-navi">
-								<a class="prev page-numbers" href="">
-									{% import 'pages.html' as pg %}
-									{{ pg.my_paginate(pagination,'blog_list') }}
-									<!--<</a>-->
-										<!--<a class='page-numbers' href='/gustbook/1'>1</a>-->
-										<!--<span class="page-numbers dots">&hellip;</span>-->
-										<!--<a class='page-numbers' href='/gustbook/15'>15</a>-->
-										<!--<a class='page-numbers' href='/gustbook/16'>16</a>-->
-										<!--<span aria-current='page' class='page-numbers current'>17</span></nav>-->
-							<div id="respond" class="comment-respond">
-								<h6 id="replytitle" class="comment-reply-title"><a rel="nofollow" id="cancel-comment-reply-link" href="" style="display:none;">取消</a></h6>
-								<form action="/gustbook/" method="post" id="commentform" class="clearfix">
-									<div class="clearfix"></div>
-									<div class="author-info">
-										<input type="text" name="nickname" id="nickname" placeholder="昵  称 : " value="" tabindex="1" title="Name (required)" />
-										<input type="text" name="email" id="email" placeholder="邮  箱 : " value="" tabindex="2" title="E-mail(will not be published) required" />
-										<input type="text" name="qq" id="qq" placeholder="Q Q : " value="" tabindex="3" title="qq" />
-									</div>
-									<div class="clearfix"></div>
-									<input type='hidden' name='comment_post_ID' value='2' id='comment_post_ID' />
-									<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-									<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="44ac0661b8" /></p>
-									<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="105" /></p>
-									<div class="comment-form-info">
-										<div class="real-time-gravatar"> <img id="real-time-gravatar" src="/static/images/d41d8cd98f00b204e9800998ecf8427e.png" alt="gravatar头像" />
-										</div>
-										<p class="input-row">
-											<i class="row-icon"></i>
-											<textarea class="text_area" rows="3" cols="80" name="comment" id="comment" tabindex="4" placeholder="你不说两句吗？(°∀°)ﾉ……"></textarea>
-											<input type="submit" name="submit" class="button" id="submit" tabindex="5" value="发送" />
-										</p>
-									</div>
-								</form>
-							</div>
+
 						</div>
 					</section>
 				</div>

@@ -4,8 +4,12 @@
     <option name="enabled" value="true" />
   </component>
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.7" jdkType="Python SDK" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources/d528fc39-8ccd-44fa-8250-d3a71c998ea0/entities" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources/709bdfca-1581-49c6-a72d-16ea5e6ed8c0" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/inspectionProfiles" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 3.8 (venv)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">

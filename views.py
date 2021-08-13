@@ -18,6 +18,14 @@ def update():
 def detail():
     return render_template("detail.html")
 
+@app.route("/filelist/")
+def filelist():
+    per = 10
+    filelist = Filelist.query.offset((1 - 1) * per).limit(per)
+    count = Filelist.query.count()
+    return render_template("filelist.html", **locals())
+    # return render_template("filelist.html")
+
 def sjtj():
     email = ['45654688@qq.com', '26578548@qq.com', '578548@qq.com', '578548@qq.com', '754578548@qq.com',
              '74878548@qq.com', '84578548@qq.com', '6342578548@qq.com', '2845278548@qq.com', '7867478548@qq.com',
@@ -44,36 +52,37 @@ def sjtj():
         )
         session.add(art)
         session.commit()
+
 @app.route("/gustbook/<int:num>")
 def gustlist(num):
     per = 10
-    message = Message.query.order_by("id desc").offset((num-1)*per).limit(per)
+    message = Message.query.order_by(Message.id.desc()).offset((num-1)*per).limit(per)
     count = Message.query.count()
     return render_template("gustbook.html",**locals())
 
-@app.route("/gustbook/",methods=["POST","GET"])
-def gustbook():
-    if request.method == "POST":
-        formdata = request.form
-        nickname = formdata.get("nickname")
-        email = formdata.get("email")
-        qq = formdata.get("qq")
-        time = datetime.datetime.now()
-        description = formdata.get("comment")
-        # sjtj()
-        art = Message(
-            nickname = nickname,
-            email = email,
-            qq = qq,
-            time = time,
-            description = description,
-        )
-        session.add(art)
-        session.commit()
-
-    count = Message.query.count()
-    message = Message.query.filter(Message.id>count-10).order_by("id desc")
-    return render_template("gustbook.html",**locals())
+# @app.route("/gustbook/",methods=["POST","GET"])
+# def gustbook():
+#     if request.method == "POST":
+#         formdata = request.form
+#         nickname = formdata.get("nickname")
+#         email = formdata.get("email")
+#         qq = formdata.get("qq")
+#         time = datetime.datetime.now()
+#         description = formdata.get("comment")
+#         # sjtj()
+#         art = Message(
+#             nickname = nickname,
+#             email = email,
+#             qq = qq,
+#             time = time,
+#             description = description,
+#         )
+#         session.add(art)
+#         session.commit()
+#
+#     count = Message.query.count()
+#     message = Message.query.filter(Message.id>count-10).order_by("id desc")
+#     return render_template("gustbook.html",**locals())
 
 # @app.route("/gustbook/")
 # def gustbook():

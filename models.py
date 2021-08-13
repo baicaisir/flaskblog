@@ -39,4 +39,18 @@ class Message(db.Model):
     description = db.Column(db.TEXT)              #留言内容
     def __repr__(self):
         return self.nickname
+
+class Filelist(db.Model):
+    __tablename__ = "filelist"
+    id = db.Column(db.Integer, primary_key=True)  #id
+    filename = db.Column(db.String(32))           #文件名称
+    type = db.Column(db.String(32))           #文件类型
+    filesize = db.Column(db.String(32))            #文件大小
+    filepath   = db.Column(db.String(64))            #文件存放路径
+    # time = db.Column(db.DATETIME)                 #时间
+    time = db.Column(db.TEXT)              #文件上传时间
+    description = db.Column(db.TEXT)              #文件介绍
+
+    def __repr__(self):
+        return self.filename
 db.create_all()

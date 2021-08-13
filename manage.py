@@ -1,4 +1,3 @@
-import os,random,time,datetime
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
@@ -21,9 +20,9 @@ session = db.session
 
 if __name__ == '__main__':
         app.run(
-            host="127.0.0.1",
-            port=9000,
-            debug=True
+            host="0.0.0.0",
+            port=80,
+            debug=False
         )
         # email = ['45654688@qq.com', '26578548@qq.com', '578548@qq.com', '578548@qq.com', '754578548@qq.com',
         #          '74878548@qq.com', '84578548@qq.com', '6342578548@qq.com', '2845278548@qq.com', '7867478548@qq.com',
